@@ -1,0 +1,15 @@
+# view AndroidManifest.xml #generated:31
+-keep class com.cwx.max.LookImgActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:22
+-keep class com.cwx.max.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:16
+-keep class com.cwx.max.MainApplication { <init>(...); }
+
+# view AndroidManifest.xml #generated:33
+-keep class com.cwx.max.UserDetailActivity { <init>(...); }
+
+# view res/layout/activity_userdetail.xml #generated:110
+-keep class za.co.immedia.pinnedheaderlistview.PinnedHeaderListView { <init>(...); }
+

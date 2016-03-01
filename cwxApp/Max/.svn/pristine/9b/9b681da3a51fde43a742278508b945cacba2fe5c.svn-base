@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="invisable">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="bbbbbb">#bbbbbb</color>
+    <color name="c282828">#282828</color>
+    <color name="c212121">#212121</color>
+    <color name="c121212">#121212</color>
+    <color name="c515151">#515151</color>
+    <color name="caaaaaa">#77aaaaaa</color>
+    <color name="cf0a868">#f0a868</color>
+
+</resources>

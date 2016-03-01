@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/theme" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="学生作业提交系统"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" >
+
+        <EditText
+            android:id="@+id/login_edit_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+            android:background="@drawable/xml_edit_text"
+            android:hint="请输入学号"
+            android:padding="8dp"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_above="@id/login_edit_account"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="28dp"
+            android:contentDescription="img"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img" />
+
+        <EditText
+            android:id="@+id/login_edit_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_edit_account"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/xml_edit_text"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:textSize="14sp" />
+
+        <RadioGroup
+            android:id="@+id/login_group_radiogrpup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_edit_password"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/login_radiobutton_student"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="学生"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/login_radiobutton_teacher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="教师"
+                android:textColor="@color/black" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/login_button_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_group_radiogrpup"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/xml_button_menu"
+            android:padding="8dp"
+            android:text="登陆"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</LinearLayout>

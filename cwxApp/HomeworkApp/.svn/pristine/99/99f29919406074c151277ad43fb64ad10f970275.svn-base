@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <corners
+        android:bottomLeftRadius="2dp"
+        android:bottomRightRadius="2dp"
+        android:topLeftRadius="2dp"
+        android:topRightRadius="2dp" />
+
+    <!-- 边框颜色 -->
+    <stroke
+        android:dashGap="0dp"
+        android:dashWidth="1dp"
+        android:width="2dp"
+        android:color="@color/theme_dark" />
+
+    <!-- 填充颜色 -->
+    <solid android:color="@color/invisable" />
+
+    <!-- 填充渐变(有填充颜色时无效) -->
+    <!--
+         <gradient
+        android:angle="90"
+        android:endColor="@color/LightBlack"
+        android:startColor="@color/Black" />
+    -->
+
+</shape>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/helper_button_lookclass"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:onClick="onFragmentButtonClick"
+        android:text="课表查询" />
+
+    <Button
+        android:id="@+id/helper_button_lookbus"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:onClick="onFragmentButtonClick"
+        android:text="公交查询" />
+
+    <Button
+        android:id="@+id/helper_button_lookshop"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:onClick="onFragmentButtonClick"
+        android:text="附近商家" />
+
+    <Button
+        android:id="@+id/helper_button_lookoffice"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:onClick="onFragmentButtonClick"
+        android:text="校内机构" />
+
+    <Button
+        android:id="@+id/helper_button_outhelper"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:onClick="onFragmentButtonClick"
+        android:text="天气助手" />
+
+</LinearLayout>

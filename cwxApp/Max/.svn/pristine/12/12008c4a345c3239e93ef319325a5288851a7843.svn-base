@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c282828"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/d_blackbackground" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/shape_seach_edit" >
+
+            <EditText
+                android:id="@+id/search_edittext_seatchtext"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="40dp"
+                android:background="@color/invisable"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_search"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textCursorDrawable="@null"
+                android:textSize="12sp" />
+
+            <RelativeLayout
+                android:id="@+id/search_layout_btnconfirmsearch"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true" >
+
+                <View
+                    android:layout_width="2px"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:background="@color/c515151" />
+
+                <ImageView
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="7dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/d_search_white" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/search_listview_searchlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:cacheColorHint="@color/invisable"
+        android:divider="@color/c515151"
+        android:dividerHeight="2px"
+        android:listSelector="@color/invisable" >
+    </ListView>
+
+</LinearLayout>

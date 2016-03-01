@@ -1,0 +1,25 @@
+package com.hbue.homeworkapp.fragment;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+
+import com.hbue.homeworkapp.R;
+import com.hbue.homeworkapp.adpeter.MessageAdapter;
+
+public class LookMessageFragment extends Fragment {
+
+	private ListView messageList;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		View v = inflater.inflate(R.layout.page_message_lookmsg, container, false);
+		messageList = (ListView) v.findViewById(R.id.lookmsg_listview_msglist);
+		MessageAdapter classAdapter = new MessageAdapter(getActivity());
+		messageList.setAdapter(classAdapter);
+		return v;
+	}
+}

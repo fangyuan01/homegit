@@ -1,0 +1,228 @@
+package de.greenrobot.daogenerator.gentest;
+
+import de.greenrobot.daogenerator.DaoGenerator;
+import de.greenrobot.daogenerator.Entity;
+import de.greenrobot.daogenerator.Schema;
+
+/**
+ * BZP的bean与sql操作工具生成类
+ * 
+ * @author Chen
+ * 
+ */
+public class ExampleDaoGenerator {
+
+	public static void main(String[] args) throws Exception {
+		Schema schema = new Schema(5, "de.greenrobot.daoexample");
+		addFlavorHouse(schema);
+		addHouseShare(schema);
+		addRentHouse(schema);
+		addSellHouse(schema);
+		addShare(schema);
+		addSite(schema);
+		addUser(schema);
+		addUserRss(schema);
+		addUserSiteInfo(schema);
+		addUserShare(schema);
+		new DaoGenerator().generateAll(schema, "../DaoMyAppGenerator/src");
+	}
+
+	private static void addUserShare(Schema schema) {
+		Entity type = schema.addEntity("UserShare");
+		type.addStringProperty("username").primaryKey();
+		type.addStringProperty("phone");
+		type.addStringProperty("sex");
+		type.addStringProperty("address");
+		type.addStringProperty("company");
+		type.addStringProperty("real_name");
+		type.addStringProperty("isAuthorized");
+	}
+
+	private static void addFlavorHouse(Schema schema) {
+		Entity type = schema.addEntity("FlavorHouse");
+		type.addStringProperty("houseId").primaryKey();
+		type.addStringProperty("flavorUsername");
+		type.addIntProperty("saleOrRent");
+		type.addIntProperty("houseType");
+		type.addStringProperty("gmtCreate");
+		type.addStringProperty("gmtModify");
+		type.addStringProperty("isDeleted");
+	}
+
+	private static void addHouseShare(Schema schema) {
+		Entity type = schema.addEntity("HouseShare");
+		type.addStringProperty("houseId").primaryKey();
+		type.addStringProperty("shareUsername");
+		type.addIntProperty("saleOrRent");
+		type.addIntProperty("houseType");
+		type.addStringProperty("creatorUsername");
+		type.addStringProperty("gmtCreate");
+		type.addStringProperty("gmtModify");
+		type.addStringProperty("isDeleted");
+	}
+
+	private static void addRentHouse(Schema schema) {
+		Entity type = schema.addEntity("RentHouse");
+		type.addStringProperty("id").primaryKey();
+		type.addStringProperty("username");
+		type.addIntProperty("type");
+		type.addStringProperty("houseNo");
+		type.addStringProperty("city");
+		type.addStringProperty("block");
+		type.addStringProperty("street");
+		type.addStringProperty("community");
+		type.addDoubleProperty("gpsX");
+		type.addDoubleProperty("gpsY");
+		type.addIntProperty("houseType");
+		type.addIntProperty("roomNum");
+		type.addIntProperty("hallNum");
+		type.addIntProperty("restNum");
+		type.addIntProperty("cookNum");
+		type.addIntProperty("balconyNum");
+		type.addFloatProperty("houseArea");
+		type.addFloatProperty("rentPrice");
+		type.addIntProperty("rentUnit");
+		type.addStringProperty("payType");
+		type.addIntProperty("rentType");
+		type.addIntProperty("houseFloor");
+		type.addIntProperty("totalFloor");
+		type.addIntProperty("houseYear");
+		type.addStringProperty("houseDirection");
+		type.addIntProperty("houseRenovation");
+		type.addStringProperty("supportingFacilities");
+		type.addStringProperty("houseProperty");
+		type.addFloatProperty("houseFee");
+		type.addStringProperty("houseStatus");
+		type.addStringProperty("housePurpose");
+		type.addIntProperty("transferFee");
+		type.addIntProperty("canCut");
+		type.addIntProperty("canRegister");
+		type.addIntProperty("officeDegree");
+		type.addStringProperty("title");
+		type.addStringProperty("describe");
+		type.addStringProperty("images");
+		type.addIntProperty("washroomNum");
+		type.addStringProperty("gmtCreate");
+		type.addStringProperty("gmtModify");
+		type.addStringProperty("isDeleted");
+	}
+
+	private static void addSellHouse(Schema schema) {
+		Entity type = schema.addEntity("SellHouse");
+		type.addStringProperty("id").primaryKey();
+		type.addStringProperty("username");
+		type.addIntProperty("type");
+		type.addStringProperty("houseNo");
+		type.addStringProperty("city");
+		type.addStringProperty("block");
+		type.addStringProperty("street");
+		type.addStringProperty("community");
+		type.addDoubleProperty("gpsX");
+		type.addDoubleProperty("gpsY");
+		type.addIntProperty("houseType");
+		type.addIntProperty("roomNum");
+		type.addIntProperty("hallNum");
+		type.addIntProperty("restNum");
+		type.addIntProperty("cookNum");
+		type.addIntProperty("balconyNum");
+		type.addFloatProperty("houseArea");
+		type.addFloatProperty("housePrice");
+		type.addIntProperty("houseFloor");
+		type.addIntProperty("totalFloor");
+		type.addIntProperty("houseYear");
+		type.addStringProperty("houseDirection");
+		type.addIntProperty("houseRenovation");
+		type.addIntProperty("priceCondition");
+		type.addIntProperty("priceDescribe");
+		type.addIntProperty("propertyRight");
+		type.addFloatProperty("basementArea");
+		type.addFloatProperty("gardenArea");
+		type.addFloatProperty("garageArea");
+		type.addIntProperty("carNum");
+		type.addStringProperty("supportingFacilities");
+		type.addStringProperty("houseProperty");
+		type.addFloatProperty("houseFee");
+		type.addIntProperty("canDivide");
+		type.addIntProperty("canRegister");
+		type.addStringProperty("housePurpose");
+		type.addIntProperty("officeDegree");
+		type.addStringProperty("title");
+		type.addStringProperty("describe");
+		type.addStringProperty("images");
+		type.addIntProperty("washroomNum");
+		type.addStringProperty("gmtCreate");
+		type.addStringProperty("gmtModify");
+		type.addStringProperty("isDeleted");
+	}
+
+	private static void addShare(Schema schema) {
+		Entity type = schema.addEntity("Share");
+		type.addStringProperty("id").primaryKey();
+		type.addStringProperty("username");
+		type.addStringProperty("shareUsername");
+		type.addIntProperty("shareType");
+		type.addStringProperty("gmtCreate");
+		type.addStringProperty("gmtModify");
+		type.addStringProperty("isDeleted");
+	}
+
+	private static void addSite(Schema schema) {
+		Entity type = schema.addEntity("Site");
+		type.addStringProperty("id").primaryKey();
+		type.addStringProperty("siteName");
+		type.addStringProperty("siteIntroduce");
+		type.addStringProperty("siteRules");
+		type.addStringProperty("siteHomeUrl");
+		type.addStringProperty("siteLoginUrl");
+		type.addStringProperty("siteRegisterUrl");
+		type.addStringProperty("sitePublicUrl");
+		type.addStringProperty("siteRefreshUrl");
+		type.addStringProperty("siteDeleteUrl");
+		type.addStringProperty("gmtCreate");
+		type.addStringProperty("gmtModify");
+		type.addStringProperty("isDeleted");
+	}
+
+	private static void addUser(Schema schema) {
+		Entity type = schema.addEntity("User");
+		type.addStringProperty("username").primaryKey();
+		type.addStringProperty("realName");
+		type.addStringProperty("password");
+		type.addStringProperty("sex");
+		type.addStringProperty("company");
+		type.addStringProperty("address");
+		type.addDoubleProperty("gpsX");
+		type.addDoubleProperty("gpsY");
+		type.addStringProperty("phone");
+		type.addStringProperty("licenseDate");
+		type.addStringProperty("gmtCreate");
+		type.addStringProperty("gmtModify");
+		type.addStringProperty("isDeleted");
+	}
+
+	private static void addUserRss(Schema schema) {
+		Entity type = schema.addEntity("UserRss");
+		type.addStringProperty("id").primaryKey();
+		type.addStringProperty("username");
+		type.addStringProperty("region");
+		type.addIntProperty("price");
+		type.addIntProperty("area");
+		type.addIntProperty("time");
+		type.addStringProperty("source");
+		type.addStringProperty("gmtCreate");
+		type.addStringProperty("gmtModify");
+		type.addStringProperty("isDeleted");
+	}
+
+	private static void addUserSiteInfo(Schema schema) {
+		Entity type = schema.addEntity("UserSiteInfo");
+		type.addStringProperty("username").primaryKey();
+		type.addStringProperty("siteId");
+		type.addStringProperty("siteName");
+		type.addStringProperty("siteUsername");
+		type.addStringProperty("sitePassword");
+		type.addStringProperty("gmtCreate");
+		type.addStringProperty("gmtModify");
+		type.addStringProperty("isDeleted");
+	}
+}

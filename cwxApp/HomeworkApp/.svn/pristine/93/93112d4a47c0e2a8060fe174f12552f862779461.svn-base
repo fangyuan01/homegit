@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="white_dark">#e0ffff</color>
+    <color name="theme">#4ebbde</color>
+    <color name="invisable">#00ffffff</color>
+    <color name="theme_dark">#4cb0d0</color>
+    <color name="black">#000000</color>
+    <color name="black_white_dark">#7b7b7b</color>
+    <color name="red">#ff5f5f</color>
+    <color name="red_dark">#d85f5f</color>
+
+</resources>

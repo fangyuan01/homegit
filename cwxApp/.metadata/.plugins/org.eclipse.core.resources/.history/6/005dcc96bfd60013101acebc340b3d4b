@@ -1,0 +1,124 @@
+package com.hbue.homeworkapp.fragment;
+
+import android.app.AlertDialog.Builder;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+
+import com.hbue.homeworkapp.MainApplication;
+import com.hbue.homeworkapp.R;
+import com.hbue.homeworkapp.dao.Course;
+import com.hbue.homeworkapp.utils.StringUtils;
+
+public class AddCourseFragment extends Fragment implements OnClickListener {
+
+	private EditText etCourseName;
+	private EditText etCourseTime;
+	private EditText etCourseArea;
+	private EditText etCourseNum;
+
+	private ImageView ivBall;
+	private ImageView ivEng;
+	private ImageView ivMath;
+	private ImageView ivRange;
+
+	private Button btn;
+
+	private View lastImg;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View v = inflater.inflate(R.layout.teacher_page_course_registercourse,
+				container, false);
+		ivBall = (ImageView) v
+				.findViewById(R.id.registercourse_imageview_ballimg);
+		ivEng = (ImageView) v
+				.findViewById(R.id.registercourse_imageview_englishimg);
+		ivMath = (ImageView) v
+				.findViewById(R.id.registercourse_imageview_mathimg);
+		ivRange = (ImageView) v
+				.findViewById(R.id.registercourse_imageview_rangeimg);
+
+		etCourseName = (EditText) v
+				.findViewById(R.id.registercourse_edittext_coursename);
+		etCourseTime = (EditText) v
+				.findViewById(R.id.registercourse_edittext_coursetime);
+		etCourseArea = (EditText) v
+				.findViewById(R.id.registercourse_edittext_courselocation);
+		etCourseNum = (EditText) v
+				.findViewById(R.id.registercourse_edittext_coursenumber);
+
+		btn = (Button) v.findViewById(R.id.registercourse_button_confirm);
+		btn.setOnClickListener(this);
+		ivBall.setOnClickListener(this);
+		ivEng.setOnClickListener(this);
+		ivMath.setOnClickListener(this);
+		ivRange.setOnClickListener(this);
+		return v;
+	}
+
+	@Override
+	public void onClick(View v) {
+		if (v.getId() == R.id.registercourse_button_confirm) {
+			String teacher = "";
+			try {
+				teacher = MainApplication.getDaoSession(getActivity())
+						.getUserDao().loadAll().get(0).getUserName();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			String imgPath = null;
+			if (lastImg != null) {
+				imgPath = String.valueOf(lastImg.getId());
+			}
+			if (StringUtils.isNullOrEmpty(etCourseNum.getText().toString())
+					|| StringUtils.isNullOrEmpty(etCourseName.getText()
+							.toString())
+					|| StringUtils.isNullOrEmpty(etCourseTime.getText()
+							.toString())|| StringUtils.isNullOrEmpty(etCourseArea.getText()
+									.toString())) {
+				return;
+			}
+			Course course = new Course(Long.parseLong(etCourseNum.getText()
+					.toString()), etCourseName.getText().toString(), teacher,
+					imgPath, etCourseTime.getText().toString(), etCourseArea
+							.getText().toString());
+			MainApplication.getDaoSession(getActivity()).insert(course);
+
+			Builder builder = new Builder(getActivity());
+			builder.setTitle("提示");
+			builder.setMessage("注册成功!");
+			builder.setNegativeButton("确定", new Dialog.OnClickListener() {
+
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.cancel();
+				}
+			});
+			builder.create().show();
+
+			etCourseName.setText("");
+			etCourseTime.setText("");
+			etCourseArea.setText("");
+			etCourseNum.setText("");
+
+			return;
+		}
+		if (lastImg != null) {
+			lastImg.setBackgroundColor(getActivity().getResources().getColor(
+					R.color.invisable));
+		}
+		v.setBackgroundColor(getActivity().getResources().getColor(
+				R.color.white_dark));
+		lastImg = v;
+	}
+}

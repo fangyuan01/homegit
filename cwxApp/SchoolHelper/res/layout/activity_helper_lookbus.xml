@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/title_color" >
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="45dp"
+            android:onClick="onBack"
+            android:scaleType="centerInside"
+            android:src="@drawable/d_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="公交查询"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="718路"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="48dp" >
+
+            <TextView
+                android:id="@+id/lookbus_textview_718"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="1环岛路体育科技学院->2环岛路小甘湾->3藏龙大道杨桥湾->4杨桥湖大道藏龙大道口->5杨桥湖大道程杨湾->6光谷大道大郭湾->7光谷大道堡湖嘴->8光谷大道刘张湾->9光谷大道吴李湾->10光谷大道金融港->11光谷大道当代国际花园->12光谷大道三李陈->13光谷大道关南村->14光谷大道凌家山北路->15光谷大道陆景苑小区->16高新大道五角塘->17高新大道关山->18关山大道关山街->19关山大道汽发社区->20珞喻路关山口->21珞喻路湖北省中医院->22珞喻路光谷广场"
+                android:textColor="@color/black" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="758路"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="48dp" >
+
+            <TextView
+                android:id="@+id/lookbus_textview_758"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="1美院南门->2栗庙新村->3栗庙路美院藏龙岛校区->4栗庙路阳光100->5杨桥湖大道藏龙大道口->6杨桥湖大道程杨湾->7光谷大道大郭湾->8光谷大道堡湖嘴->9光谷大道刘张湾->10光谷大道吴李湾->11光谷大道金融港->12光谷大道当代国际花园->13光谷大道三李陈->14光谷大道关南村->15光谷大道凌家山北路->16光谷大道陆景苑小区->17高新大道五角塘->18高新大道关山->19雄楚大道关山中学->20雄楚大道枫林上城->21雄楚大道下钱村->22民族大道上钱村->23民族大道光谷广场"
+                android:textColor="@color/black" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="755路"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="48dp" >
+
+            <TextView
+                android:id="@+id/lookbus_textview_755"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="1杨桥湖大道程杨湾->2藏龙大道杨桥湖大道口->3藏龙大道宜家龙城->4藏龙大道谭家咀->5藏龙大道前舒湾->6藏龙大道大堤湾->7藏龙大道青龙嘴->8大学园路罗友村->9大学园路郑桥村->10大学园路化徐村->11关山大道华夏学院->12关山大道关南小区->13关山大道大彭村->14关山大道曙光村->15关山大道职业技术学院->16关山大道太阳城->17关山大道湖电社区->18关山大道关山街->19关山大道汽发社区->20珞喻路关山口->21珞喻路湖北省中医院->22珞喻路光谷广场->23鲁磨路光谷广场"
+                android:textColor="@color/black" />
+        </HorizontalScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

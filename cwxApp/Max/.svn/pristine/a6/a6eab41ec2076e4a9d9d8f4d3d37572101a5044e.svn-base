@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/c282828" >
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:id="@+id/userdetailsection_textview_sectionname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

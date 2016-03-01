@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/homeword_button_addbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/xml_button_menu"
+        android:padding="8dp"
+        android:text="添加课程"
+        android:textColor="@color/white" />
+
+    <ListView
+        android:id="@+id/homework_listview_classlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/invisable"
+        android:divider="@color/invisable"
+        android:dividerHeight="0px" >
+    </ListView>
+
+</LinearLayout>

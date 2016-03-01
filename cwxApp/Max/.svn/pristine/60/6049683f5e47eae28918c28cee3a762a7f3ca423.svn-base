@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Dotamax</string>
+    <string name="title">Dotamax</string>
+    <string name="my_collection">我的收藏</string>
+    <string name="search_player">搜索玩家</string>
+    <string name="famous_players">知名玩家</string>
+    <string name="rank_wall">天梯排名</string>
+    <string name="more">更多</string>
+    <string name="hint_search">搜索:玩家ID,玩家名称</string>
+    <string name="rank">排名</string>
+    <string name="point">单排积分</string>
+    <string name="player">		玩家</string>
+    <string name="team">所属战队</string>
+
+</resources>

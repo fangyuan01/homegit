@@ -1,0 +1,38 @@
+package com.hbueschoolhelper.utils;
+
+public class MainURLs {
+	/**
+	 * Jabber服务器地址
+	 */
+	public static final String Jabber_host = "115.29.192.186";
+
+	/**
+	 * Jabber服务器端口
+	 */
+	public static final int Jabber_port = 5222;
+
+	/**
+	 * Jabber服务器接受端id
+	 */
+	public static final String Jabber_id = "cwx_01";
+
+	/**
+	 * 向目标设备发送握手请求
+	 */
+	public static final String Equipment_Say_Hello = "http://10.10.10.254/cgi-bin/sayhello.cgi.wx";
+
+	/**
+	 * 向目标设备发送openfireUserInfo
+	 */
+	public static final String Equipment_Send_User_Info = "http://10.10.10.254/cgi-bin/user.cgi.wx";
+
+	/**
+	 * 向目标设备发送wifi设备信息
+	 */
+	public static final String Equipment_Send_Wifi_Info = "http://10.10.10.254/cgi-bin/setup.cgi.wx";
+
+	/**
+	 * 向目标设备发送初始化请求
+	 */
+	public static final String Equipment_Reset = "http://10.10.10.254/cgi-bin/reset.cgi.wx";
+}

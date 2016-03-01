@@ -1,0 +1,129 @@
+package com.hbue.homeworkapp.service;
+
+import org.jivesoftware.smack.packet.Message;
+
+import android.content.Context;
+import android.support.v4.app.Fragment;
+
+import com.hbue.homeworkapp.utils.XmppManager;
+
+public abstract class BaseXmppAction {
+
+	private Fragment fragment;
+	private Context context;
+
+	public BaseXmppAction(Fragment fragment) {
+		context = fragment.getActivity().getApplicationContext();
+		id = System.currentTimeMillis();
+		XmppReceivePdispatcher.getInstance(context).addAction(this);
+		onCreate(context);
+	}
+
+	private long id;
+
+	/**
+	 * 获取命令id
+	 * 
+	 * @return
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * 获取context
+	 * 
+	 * @return
+	 */
+	public Context getContext() {
+		return context;
+	}
+
+	/**
+	 * 设置context
+	 * 
+	 * @param context
+	 */
+	public void setContext(Context context) {
+		this.context = context;
+	}
+
+	/**
+	 * 绑定该action的fragment
+	 * 
+	 * @param activity
+	 */
+	public void setFragment(Fragment fragment) {
+		this.fragment = fragment;
+	}
+
+	/**
+	 * 返回activity
+	 * 
+	 * @return
+	 */
+	public Fragment getFragment() {
+		return fragment;
+	}
+
+	/**
+	 * 发送消息
+	 * 
+	 * @param fragment
+	 */
+	public void sendMessage(String equipmentAccount) {
+		try {
+			String ac = equipmentAccount.substring(0,
+					equipmentAccount.indexOf("@"));
+			if (XmppManager.isConnected()) {
+				String str = onSendMessage(fragment);
+				System.out.println("发送xmpp请求:" + str + "   to:" + ac);
+				XmppManager.SendMessage(str, ac);
+			} else {
+				System.out.println("发送xmpp请求失败");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 发送消息时调用
+	 * 
+	 * @return 发送的消息
+	 */
+	protected abstract String onSendMessage(Fragment fragment);
+
+	/**
+	 * 初始化action
+	 * 
+	 * @param context
+	 */
+	protected abstract void onCreate(Context context);
+
+	/**
+	 * 
+	 * @param msg
+	 *            获取的消息
+	 * @param activity
+	 *            处理该消息的activity
+	 * @return 获取到消息时调用:处理完毕则返回true ,否则返回false
+	 */
+	public boolean onGetMessage(Message msg) {
+		if (onGetMessageListener != null) {
+			return onGetMessageListener.onGetMessage(msg);
+		}
+		return false;
+	}
+
+	private OnGetMessageListener onGetMessageListener = null;
+
+	public void setOnGetMessageListener(OnGetMessageListener lis) {
+		onGetMessageListener = lis;
+	}
+
+	public interface OnGetMessageListener {
+		public boolean onGetMessage(Message msg);
+	}
+
+}

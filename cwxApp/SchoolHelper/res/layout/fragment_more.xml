@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/more_button_about"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:onClick="onFragmentButtonClick"
+        android:text="关于" />
+
+    <Button
+        android:id="@+id/more_button_telus"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:onClick="onFragmentButtonClick"
+        android:text="联系我们" />
+
+    <Button
+        android:id="@+id/more_button_updata"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:onClick="onFragmentButtonClick"
+        android:text="更新数据" />
+
+</LinearLayout>
